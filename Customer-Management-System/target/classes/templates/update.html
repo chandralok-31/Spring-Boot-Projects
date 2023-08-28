@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>update</title>
+</head>
+<body>
+	<section>
+		<h1 class="row col-md-8 offset-md-2 mt-4">Customer Details</h1>
+		<form action="#" th:action="@{/save}" th:object="${customer}"
+			method="post">
+			
+		  <div class="row col-md-8 offset-md-2 mt-4">
+		    <div class="col">
+				<input type="hidden" th:field="*{id}" />
+		      <input type="text" th:field="*{firstName}" class="form-control" placeholder="First name">
+		    </div>
+		    <div class="col">
+		      <input type="text" th:field="*{lastName}" class="form-control" placeholder="Last name">
+		    </div>
+		  </div>
+		  
+		  <div class="row col-md-8 offset-md-2 mt-4">
+		    <div class="col">
+		      <input type="text" th:field="*{street}" class="form-control" placeholder="street">
+		    </div>
+		    <div class="col">
+		      <input type="text" th:field="*{address}" class="form-control" placeholder="Address">
+		    </div>
+		  </div>
+		  
+		  <div class="row col-md-8 offset-md-2 mt-4">
+		    <div class="col">
+		      <input type="text" th:field="*{city}" class="form-control" placeholder="City">
+		    </div>
+		    <div class="col">
+		      <input type="text" th:field="*{state}" class="form-control" placeholder="State">
+		    </div>
+		  </div>
+		  
+		  <div class="row col-md-8 offset-md-2 mt-4">
+		    <div class="col">
+		      <input type="email" th:field="*{email}" class="form-control" placeholder="Email">
+		    </div>
+		    <div class="col">
+		      <input type="number" th:field="*{phone}" class="form-control" placeholder="Phone">
+		    </div>
+		  </div>
+		  
+		  <div class="row col-md-2 offset-md-8 mt-4">
+			  <button type="submit" class="btn btn-primary mt-4">submit</button>
+		  </div>
+		  
+		</form>
+		<a th:href = "@{/}"> Back to Customer List</a>
+	</section>
+</body>
+</html>
